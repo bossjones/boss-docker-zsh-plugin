@@ -8,3 +8,11 @@ setup-docker ()
     docker ps;
     docker-machine-nfs dev
 }
+
+docker-setup ()
+{
+    docker-machine start dev;
+    eval "$(docker-machine env dev)";
+    docker ps;
+    docker-machine-nfs dev
+}
